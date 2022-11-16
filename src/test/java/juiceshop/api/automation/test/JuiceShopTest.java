@@ -21,10 +21,7 @@ class JuiceShopTest extends BaseTest {
                 then().
                 statusCode(HttpStatus.SC_OK).
                 body("status", is("success")).
-                body("data", notNullValue()).
-                body("data.size()", is(35))
-                .body("data.findAll{it.name.startsWith('OWASP')}.size", is(18))
-                .body("data.findAll{it.price<1}.size", is(4));
+                body("data", notNullValue());
     }
 
     @Test
